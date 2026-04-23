@@ -58,43 +58,33 @@ const zero = document.querySelector("#zero");
 
 one.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`1`);
-    num1 = Number(answer.textContent);
 });
 two.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`2`);
-    num1 = Number(answer.textContent);
 });
 three.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`3`);
-    num1 = Number(answer.textContent);
 });
 four.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`4`);
-    num1 = Number(answer.textContent);
 });
 five.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`5`);
-    num1 = Number(answer.textContent);
 });
 six.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`6`);
-    num1 = Number(answer.textContent);
 });
 seven.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`7`);
-    num1 = Number(answer.textContent);
 });
 eight.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`8`);
-    num1 = Number(answer.textContent);
 });
 nine.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`9`);
-    num1 = Number(answer.textContent);
 });
 zero.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`0`);
-    num1 = Number(answer.textContent);
 });
 
 
@@ -122,6 +112,11 @@ divideBtn.addEventListener("click", () => {
 });
 
 //Running inputs
-const [var1, var2] = answer.textContent.split(operator);
-num1 = var1;
-num2 = var2;
+const compute = document.querySelector("#compute");
+
+compute.addEventListener("click", () => {
+    const [var1, var2] = answer.textContent.split(operator);
+    num1 = Number(var1);
+    num2 = Number(var2);
+    operate(num1, operator, num2);
+});
