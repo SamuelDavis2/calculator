@@ -1,3 +1,4 @@
+//Maths functions
 function add(num1, num2) {
     console.log(num1 + num2);
 }
@@ -32,11 +33,18 @@ function operate(num1, operator, num2) {
     }
 }
 
+//Displaying answers and clearing
 const answer = document.querySelector(".answer");
 const clear = document.querySelector(".clear");
 
-clear.addEventListener("click", () => answer.textContent = '');
+clear.addEventListener("click", () => {
+    answer.textContent = ''
+    num1 = 0;
+    num2 = 0;
+    operator = '';
+});
 
+//Number functionality
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
 const three = document.querySelector("#three");
@@ -88,3 +96,32 @@ zero.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`0`);
     num1 = Number(answer.textContent);
 });
+
+
+//Selecting operator
+const addBtn = document.querySelector("#add");
+const subtractBtn = document.querySelector("#subtract");
+const multiplyBtn = document.querySelector("#multiply");
+const divideBtn = document.querySelector("#divide");
+
+addBtn.addEventListener("click", () => {
+    answer.textContent = answer.textContent.concat(`+`);
+    operator = '+';
+});
+subtractBtn.addEventListener("click", () => {
+    answer.textContent = answer.textContent.concat(`-`);
+    operator = '-';
+});
+multiplyBtn.addEventListener("click", () => {
+    answer.textContent = answer.textContent.concat(`*`);
+    operator = '*';
+});
+divideBtn.addEventListener("click", () => {
+    answer.textContent = answer.textContent.concat(`/`);
+    operator = '/';
+});
+
+//Running inputs
+const [var1, var2] = answer.textContent.split(operator);
+num1 = var1;
+num2 = var2;
