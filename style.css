@@ -2,16 +2,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F7F7FF;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    margin: 200px;
+    margin: 100px;
+    height: 650px;
+    width: 400px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.315);
+    border: solid #B6C2D9 1px;
+    justify-content: flex-end;
+}
+
+.results {
+    display: flex;
+    height: 100px;
+    width: 375px;
+    margin-left: 20px;
 }
 
 .select {
     display: flex;
+    height: 500px;
+    width: 400px;
+    background-color: #B6C2D9;
+    border-radius: 30px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.088) inset;
 }
 
 .operators {
@@ -22,4 +42,38 @@ body {
 .numContainer {
     display: flex;
     flex-wrap: wrap;
+    height: 525px;
+    width: 300px;
+    justify-content: center;
+}
+
+button {
+    gap: 15px;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    border: none;
+    margin: 10px;
+    font-size: 24px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.121);
+}
+
+#compute {
+    background-color: #324376;
+    color: white;
+}
+
+.clear {
+    background-color: #324376;
+    color: white;
+}
+
+.numbers {
+    background-color: white;
+    color: #145C9E;
+}
+
+.operator {
+    background-color: #145C9E;
+    color: white;
 }
