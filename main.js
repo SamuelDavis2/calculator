@@ -99,20 +99,56 @@ const multiplyBtn = document.querySelector("#multiply");
 const divideBtn = document.querySelector("#divide");
 
 addBtn.addEventListener("click", () => {
-    answer.textContent = answer.textContent.concat(`+`);
-    operator = '+';
+    if (operator == '') {
+        answer.textContent = answer.textContent.concat(`+`);
+        operator = '+';
+    } else {
+        const [var1, var2] = answer.textContent.split(operator);
+        num1 = Number(var1);
+        num2 = Number(var2);
+        operate(num1, operator, num2);
+        answer.textContent = answer.textContent.concat(`+`);
+        operator = '+';
+    }
 });
 subtractBtn.addEventListener("click", () => {
-    answer.textContent = answer.textContent.concat(`-`);
-    operator = '-';
+    if (operator == '') {
+        answer.textContent = answer.textContent.concat(`-`);
+        operator = '-';
+    } else {
+        const [var1, var2] = answer.textContent.split(operator);
+        num1 = Number(var1);
+        num2 = Number(var2);
+        operate(num1, operator, num2);
+        answer.textContent = answer.textContent.concat(`-`);
+        operator = '-';
+    }
 });
 multiplyBtn.addEventListener("click", () => {
-    answer.textContent = answer.textContent.concat(`*`);
-    operator = '*';
+    if (operator == '') {
+        answer.textContent = answer.textContent.concat(`*`);
+        operator = '*';
+    } else {
+        const [var1, var2] = answer.textContent.split(operator);
+        num1 = Number(var1);
+        num2 = Number(var2);
+        operate(num1, operator, num2);
+        answer.textContent = answer.textContent.concat(`*`);
+        operator = '*';
+    }
 });
 divideBtn.addEventListener("click", () => {
-    answer.textContent = answer.textContent.concat(`/`);
-    operator = '/';
+    if (operator == '') {
+        answer.textContent = answer.textContent.concat(`/`);
+        operator = '/';
+    } else {
+        const [var1, var2] = answer.textContent.split(operator);
+        num1 = Number(var1);
+        num2 = Number(var2);
+        operate(num1, operator, num2);
+        answer.textContent = answer.textContent.concat(`/`);
+        operator = '/';
+    }
 });
 
 //Running inputs
