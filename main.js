@@ -1,22 +1,22 @@
 //Maths functions
 function add(num1, num2) {
     const result = num1 + num2;
-    answer.textContent = result;
+    answer.textContent = Math.round(result * 100) / 100;
 }
 
 function subtract(num1, num2) {
     const result = num1 - num2;
-    answer.textContent = result;
+    answer.textContent = Math.round(result * 100) / 100;
 }
 
 function multiply(num1, num2) {
     const result = num1 * num2;
-    answer.textContent = result;
+    answer.textContent = Math.round(result * 100) / 100;
 }
 
 function divide(num1, num2) {
     const result = num1 / num2;
-    answer.textContent = result;
+    answer.textContent = Math.round(result * 100) / 100;
 }
 
 let num1 = 0;
@@ -158,5 +158,13 @@ compute.addEventListener("click", () => {
     const [var1, var2] = answer.textContent.split(operator);
     num1 = Number(var1);
     num2 = Number(var2);
-    operate(num1, operator, num2);
+    if (operator == '/' && num2 == 0) {
+        answer.textContent = '';
+        num1 = 0;
+        num2 = 0;
+        alert('ERROR: You cannot divide by 0!');
+    } else {
+        operate(num1, operator, num2);
+    }
+    operator = '';
 });
