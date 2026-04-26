@@ -178,4 +178,89 @@ compute.addEventListener("click", () => {
 });
 
 // Adding in keyboard support
-
+window.addEventListener("keydown", e => {
+    if (e.key == '1') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '2') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '3') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '4') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '5') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '6') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '7') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '8') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '9') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '0') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '.') {
+        answer.textContent = answer.textContent.concat(e.key);
+    } else if (e.key == '+') {
+        if (operator == '') {
+            answer.textContent = answer.textContent.concat(`+`);
+            operator = '+';
+        } else {
+            const [var1, var2] = answer.textContent.split(operator);
+            num1 = Number(var1);
+            num2 = Number(var2);
+            operate(num1, operator, num2);
+            answer.textContent = answer.textContent.concat(`+`);
+            operator = '+';
+        }
+    } else if (e.key == '-') {
+        if (operator == '') {
+            answer.textContent = answer.textContent.concat(`-`);
+            operator = '-';
+        } else {
+            const [var1, var2] = answer.textContent.split(operator);
+            num1 = Number(var1);
+            num2 = Number(var2);
+            operate(num1, operator, num2);
+            answer.textContent = answer.textContent.concat(`-`);
+            operator = '-';
+        }
+    } else if (e.key == '*') {
+        if (operator == '') {
+            answer.textContent = answer.textContent.concat(`*`);
+            operator = '*';
+        } else {
+            const [var1, var2] = answer.textContent.split(operator);
+            num1 = Number(var1);
+            num2 = Number(var2);
+            operate(num1, operator, num2);
+            answer.textContent = answer.textContent.concat(`*`);
+            operator = '*';
+        }
+    } else if (e.key == '/') {
+        if (operator == '') {
+            answer.textContent = answer.textContent.concat(`/`);
+            operator = '/';
+        } else {
+            const [var1, var2] = answer.textContent.split(operator);
+            num1 = Number(var1);
+            num2 = Number(var2);
+            operate(num1, operator, num2);
+            answer.textContent = answer.textContent.concat(`/`);
+            operator = '/';
+        }
+    } else if (e.key == '=') {
+        const [var1, var2] = answer.textContent.split(operator);
+        num1 = Number(var1);
+        num2 = Number(var2);
+        if (operator == '/' && num2 == 0) {
+            answer.textContent = '';
+            num1 = 0;
+            num2 = 0;
+            alert('ERROR: You cannot divide by 0!');
+        } else {
+            operate(num1, operator, num2);
+        }
+        operator = '';
+    }
+});
