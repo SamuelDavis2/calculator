@@ -59,6 +59,7 @@ const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
 const zero = document.querySelector("#zero");
+const decimal = document.querySelector('#decimal');
 
 one.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`1`);
@@ -89,6 +90,13 @@ nine.addEventListener("click", () => {
 });
 zero.addEventListener("click", () => {
     answer.textContent = answer.textContent.concat(`0`);
+});
+decimal.addEventListener("click", () => {
+    if (answer.textContent.includes('.')) {
+
+    } else {
+        answer.textContent = answer.textContent.concat('.');
+    }
 });
 
 
@@ -168,3 +176,6 @@ compute.addEventListener("click", () => {
     }
     operator = '';
 });
+
+// Adding in keyboard support
+
